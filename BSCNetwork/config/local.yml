@@ -1,0 +1,38 @@
+app:
+  name: bscnetwork.com
+  port: 10033
+
+context:
+  timeout: 2
+
+dsn: "root:Aj189628@@tcp(127.0.0.1:3306)/bnb_network?parseTime=true"
+
+redis:
+  host: "127.0.0.1"
+  port: 6379
+  password: Aj189628@
+  db: 0
+  pool_size: 500
+  timeout: 10
+
+security:
+  key: "E4IiEcW02N4N2HKWnUjA6KxwrrrJME4SrO2FHDN0CDhHUfqjDmIiAlIoXMnG9brY"
+  salt: "KQciMyZms5nBhiEwABX9srXPVCR9PFnka3Ci3SseB4XAjBU4OTVIj1jat5oLvhCv"
+  token: "0xAFc59Fb68e75e0818145628C3D2A9281a5058385"
+
+blockchain:
+  bnb_network: "https://data-seed-prebsc-1-s1.binance.org:8545"
+  # bnb_network_net 0 for tbnb 1 for bnb prod
+  bnb_network_net: 0   
+  # 18 decimal
+  bnb_usdt_contract: 0xAFc59Fb68e75e0818145628C3D2A9281a5058385 
+  # 8 decimals
+  # bnb_usdt_contract: 0x58d2cF49cCeF9B840e360Ec339faDA5D28403fBc
+  block_interval: 3
+  bnb_reconcile_threshold: "0.01"
+  usdt_reconcile_threshold: "2"
+  bnb_reconcile_address: 0xf80b3c5BB667A0e02A9c838faE1946Be739677A0
+
+telegram_bot:
+  bot_token: "5875608981:AAHHW9qQi0afuTm8GIH40HrSeCTqYlDKSBY"
+  channel_id: "-4172623599"

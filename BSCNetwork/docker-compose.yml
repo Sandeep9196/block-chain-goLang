@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  timescaledb:
+    image: timescale/timescaledb:latest-pg14
+    container_name: my_timescaledb
+    environment:
+      POSTGRES_PASSWORD: Aj189628@
+      POSTGRES_USER: dev
+      POSTGRES_DB: bnb_network
+    ports:
+      - "5432:5432"
+    volumes:
+      - timescaledb_data:/var/lib/postgresql/data
+
+  mysql:
+    image: mysql:latest
+    container_name: my_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Aj189628@
+      MYSQL_DATABASE: bnb_network
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: Aj189628@
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: redis:latest
+    container_name: my_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: ["redis-server", "--requirepass Aj189628@"]
+
+volumes:
+  timescaledb_data:
+    driver: local
+  mysql_data:
+    driver: local
+  redis_data:
+    driver: local
